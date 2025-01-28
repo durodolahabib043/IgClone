@@ -53,7 +53,7 @@ struct TabBarView: View {
     private var details: some View {
         TabView(selection: selectedTab) {
             NavigationStack(path: $homePath) {
-                Text("Home")
+                HomeView()
             }
             .tag(Screens.home)
             .tabItem { Label("", systemImage: "house") }
