@@ -14,6 +14,12 @@
 		4F0050A32D4959B20072C84F /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0050A22D4959B20072C84F /* Screens.swift */; };
 		4F0050A52D4963C80072C84F /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0050A42D4963C80072C84F /* TabBarView.swift */; };
 		4F0050AB2D496E140072C84F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0050AA2D496E140072C84F /* HomeView.swift */; };
+		4F0050AD2D4973A60072C84F /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0050AC2D4973A60072C84F /* DataGenerator.swift */; };
+		4F0050B12D4973E20072C84F /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0050AE2D4973DE0072C84F /* Story.swift */; };
+		4F0050B22D4973E20072C84F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0050AF2D4973DF0072C84F /* Post.swift */; };
+		4F0050B32D4973E20072C84F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0050B02D4973E10072C84F /* User.swift */; };
+		4F0050B52D4974190072C84F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0050B42D4974190072C84F /* Comment.swift */; };
+		4F0050B72D4975340072C84F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0050B62D4975340072C84F /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +31,12 @@
 		4F0050A22D4959B20072C84F /* Screens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 		4F0050A42D4963C80072C84F /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		4F0050AA2D496E140072C84F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4F0050AC2D4973A60072C84F /* DataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
+		4F0050AE2D4973DE0072C84F /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		4F0050AF2D4973DF0072C84F /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		4F0050B02D4973E10072C84F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4F0050B42D4974190072C84F /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		4F0050B62D4975340072C84F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,7 @@
 		4F00509B2D4958780072C84F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4F0050B62D4975340072C84F /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -96,6 +109,10 @@
 		4F00509D2D49588F0072C84F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4F0050B42D4974190072C84F /* Comment.swift */,
+				4F0050AF2D4973DF0072C84F /* Post.swift */,
+				4F0050AE2D4973DE0072C84F /* Story.swift */,
+				4F0050B02D4973E10072C84F /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +128,7 @@
 		4F00509F2D49595C0072C84F /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4F0050AC2D4973A60072C84F /* DataGenerator.swift */,
 				4F0050A22D4959B20072C84F /* Screens.swift */,
 				4F00509D2D49588F0072C84F /* Model */,
 			);
@@ -234,9 +252,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F0050B12D4973E20072C84F /* Story.swift in Sources */,
+				4F0050B72D4975340072C84F /* HomeViewModel.swift in Sources */,
 				4F0050A32D4959B20072C84F /* Screens.swift in Sources */,
 				4F0050902D4837BA0072C84F /* ContentView.swift in Sources */,
+				4F0050B22D4973E20072C84F /* Post.swift in Sources */,
 				4F0050A52D4963C80072C84F /* TabBarView.swift in Sources */,
+				4F0050B52D4974190072C84F /* Comment.swift in Sources */,
+				4F0050B32D4973E20072C84F /* User.swift in Sources */,
+				4F0050AD2D4973A60072C84F /* DataGenerator.swift in Sources */,
 				4F0050AB2D496E140072C84F /* HomeView.swift in Sources */,
 				4F00508E2D4837BA0072C84F /* IgCloneApp.swift in Sources */,
 			);

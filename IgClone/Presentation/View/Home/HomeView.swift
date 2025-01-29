@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var homeViewModel = HomeViewModel()
+    
     var body: some View {
         ZStack {
             Color.cyan
             ScrollView() {
                 ScrollView(.horizontal) {
-                    
+                    LazyHStack(spacing: 10) {
+                        ForEach(homeViewModel.user ?? []) { user in
+                            storyScroll(user: user)
+                        }
+                    }
+                    .padding()
                 }
+                .scrollIndicators(.hidden)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -36,7 +44,29 @@ struct HomeView: View {
         }
     }
     
-  
+    @ViewBuilder
+    private func storyScroll(user: User) -> some View {
+        VStack{
+            Button {
+
+            } label: {
+                ZStack {
+                    Circle()
+                        .fill(.red)
+                    Image(uiImage: user.profilePic)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .imageScale(.large)
+                        .foregroundColor(.white.opacity(0.6))
+                        .fontWeight(.black)
+                        .clipShape(Circle())
+                }
+                .frame(width: 60)
+            }
+            Text(user.name)
+        }
+
+    }
     
 }
 
