@@ -12,17 +12,30 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
-            Color.cyan
-            ScrollView() {
+            Color.white
+            ScrollView(.vertical) {
                 ScrollView(.horizontal) {
                     LazyHStack(spacing: 10) {
-                        ForEach(homeViewModel.user ?? []) { user in
+                        ForEach(homeViewModel.user ) { user in
                             storyScroll(user: user)
                         }
                     }
                     .padding()
                 }
                 .scrollIndicators(.hidden)
+                
+                LazyVStack(spacing: 10) {
+                    ForEach(homeViewModel.post ) { post in
+                       // storyScroll(user: user)
+                        ZStack {
+                            VStack {
+                                header(post: post)
+                                pageView(post: post)
+                            }
+                        }
+
+                    }
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -40,8 +53,67 @@ struct HomeView: View {
                         }
                     }
                 }
+                
+                ToolbarItem(placement: .principal) {
+                    Text("Instagram").font(.title)
+                }
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        Print("camera tapped")
+                    } label: {
+                        Image(systemName: "camera")
+                    }
+                    
+                }
+
+                
+            }
+            .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+    
+    @ViewBuilder
+    private func pageView(post: Post) -> some View {
+        TabView {
+            ForEach(0..<post.images.count, id: \.self) { i in
+                
+                Image(uiImage: post.images[i])
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 500)
+                    .clipped()
+                
             }
         }
+        .tabViewStyle(.page)
+       // .indexViewStyle(.page(backgroundDisplayMode: .always))
+        .frame(height: 500)
+
+    }
+    
+    @ViewBuilder
+    private func header(post: Post) -> some View {
+        HStack(spacing: 8) {
+            ZStack {
+                Circle()
+                    .fill(.orange)
+                Image(uiImage: post.user.profilePic)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .imageScale(.large)
+                    .foregroundColor(.white.opacity(0.6))
+                    .fontWeight(.black)
+                    .clipShape(Circle())
+                    .frame(width: 30)
+            }
+            .frame(width: 35)
+
+            Text(post.user.username)
+            Spacer()
+            Image(systemName: "ellipsis")
+        }
+        .padding()
     }
     
     @ViewBuilder

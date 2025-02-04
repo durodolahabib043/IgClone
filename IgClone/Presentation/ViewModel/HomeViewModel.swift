@@ -10,6 +10,7 @@ import Foundation
 
 class HomeViewModel : ObservableObject {
     @Published var user: [User]
+    @Published var post : [Post] = []
     
     private let dataGenerator : DataGenerator
     
@@ -17,10 +18,15 @@ class HomeViewModel : ObservableObject {
         self.user = user
         self.dataGenerator = dataGenerator
         getUsers()
+        getAllPost()
     }
     
     private func getUsers() {
         user = dataGenerator.getAllUsers()
+    }
+    
+    func getAllPost(){
+        post = dataGenerator.generatePostData()
     }
 
 }

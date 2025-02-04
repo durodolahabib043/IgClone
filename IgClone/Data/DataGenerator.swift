@@ -77,6 +77,15 @@ class DataGenerator: NSObject {
         return users
     }
     
+    func generatePostData() -> [Post] {
+        var posts : [Post] = []
+        let unsortedUsers = users.shuffled()
+        for user in unsortedUsers{
+            posts += user.posts
+        }
+        return posts
+    }
+    
     func generateData(completion: @escaping ([Post]) -> ()) -> [Post] {
         var posts : [Post] = []
         let unsortedUsers = users.shuffled()
